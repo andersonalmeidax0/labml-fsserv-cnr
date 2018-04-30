@@ -6,6 +6,7 @@ RUN       apt-get update && \
           rm -rf /var/lib/apt/lists/*
     
 COPY      set_htpasswd.sh /set_htpasswd.sh
+RUN       chmod +777 ./set_htpasswd.sh
 COPY      webdav-site.conf /etc/nginx/sites-enabled/
 RUN       rm /etc/nginx/sites-enabled/default
 # Overwrite mimetypes to add rss format.
